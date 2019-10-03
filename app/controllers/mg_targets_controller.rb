@@ -53,6 +53,22 @@ class MgTargetsController < ApplicationController
     end
   end
 
+  def destroy_row_from_lift
+    @mg_target = MgTarget.find(params.fetch("id_to_remove"))
+
+    @mg_target.destroy
+
+    redirect_to("/lifts/#{@mg_target.lift_id}", notice: "MgTarget deleted successfully.")
+  end
+
+  def destroy_row_from_mg
+    @mg_target = MgTarget.find(params.fetch("id_to_remove"))
+
+    @mg_target.destroy
+
+    redirect_to("/muscle_groups/#{@mg_target.mg_id}", notice: "MgTarget deleted successfully.")
+  end
+
   def destroy_row
     @mg_target = MgTarget.find(params.fetch("id_to_remove"))
 

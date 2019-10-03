@@ -53,6 +53,22 @@ class EquipmentRequirementsController < ApplicationController
     end
   end
 
+  def destroy_row_from_lift
+    @equipment_requirement = EquipmentRequirement.find(params.fetch("id_to_remove"))
+
+    @equipment_requirement.destroy
+
+    redirect_to("/lifts/#{@equipment_requirement.lift_id}", notice: "EquipmentRequirement deleted successfully.")
+  end
+
+  def destroy_row_from_equipment
+    @equipment_requirement = EquipmentRequirement.find(params.fetch("id_to_remove"))
+
+    @equipment_requirement.destroy
+
+    redirect_to("/equipment/#{@equipment_requirement.equipment_id}", notice: "EquipmentRequirement deleted successfully.")
+  end
+
   def destroy_row
     @equipment_requirement = EquipmentRequirement.find(params.fetch("id_to_remove"))
 

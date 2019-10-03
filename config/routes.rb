@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_equipment_requirement/:id_to_remove", { :controller => "equipment_requirements", :action => "destroy_row" })
+  get("/delete_equipment_requirement_from_equipment/:id_to_remove", { :controller => "equipment_requirements", :action => "destroy_row_from_equipment" })
+  get("/delete_equipment_requirement_from_lift/:id_to_remove", { :controller => "equipment_requirements", :action => "destroy_row_from_lift" })
 
   #------------------------------
 
@@ -75,6 +77,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_user_inventory/:id_to_remove", { :controller => "user_inventories", :action => "destroy_row" })
+  get("/delete_user_inventory_from_equipment/:id_to_remove", { :controller => "user_inventories", :action => "destroy_row_from_equipment" })
+  get("/delete_user_inventory_from_user/:id_to_remove", { :controller => "user_inventories", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -113,6 +117,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_mg_target/:id_to_remove", { :controller => "mg_targets", :action => "destroy_row" })
+  get("/delete_mg_target_from_mg/:id_to_remove", { :controller => "mg_targets", :action => "destroy_row_from_mg" })
+  get("/delete_mg_target_from_lift/:id_to_remove", { :controller => "mg_targets", :action => "destroy_row_from_lift" })
 
   #------------------------------
 
@@ -132,6 +138,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_favorite/:id_to_remove", { :controller => "favorites", :action => "destroy_row" })
+  get("/delete_favorite_from_lift/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_lift" })
+  get("/delete_favorite_from_user/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_user" })
 
   #------------------------------
 

@@ -53,6 +53,22 @@ class UserInventoriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @user_inventory = UserInventory.find(params.fetch("id_to_remove"))
+
+    @user_inventory.destroy
+
+    redirect_to("/users/#{@user_inventory.user_id}", notice: "UserInventory deleted successfully.")
+  end
+
+  def destroy_row_from_equipment
+    @user_inventory = UserInventory.find(params.fetch("id_to_remove"))
+
+    @user_inventory.destroy
+
+    redirect_to("/equipment/#{@user_inventory.equipment_id}", notice: "UserInventory deleted successfully.")
+  end
+
   def destroy_row
     @user_inventory = UserInventory.find(params.fetch("id_to_remove"))
 
