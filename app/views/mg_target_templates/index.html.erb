@@ -58,13 +58,21 @@
 
         <!-- Display mg_target.mg_id start -->
         <td>
-          <%= mg_target.mg.name %>
+          <% if mg_target.mg.present? %>
+            <a href="/muscle_groups/<%= mg_target.mg.id %>">
+              <%= mg_target.mg.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display mg_target.mg_id end -->
 
         <!-- Display mg_target.lift_id start -->
         <td>
-          <%= mg_target.lift.cooldown_hours %>
+          <% if mg_target.lift.present? %>
+            <a href="/lifts/<%= mg_target.lift.id %>">
+              <%= mg_target.lift.cooldown_hours %>
+            </a>
+          <% end %>
         </td>
         <!-- Display mg_target.lift_id end -->
 

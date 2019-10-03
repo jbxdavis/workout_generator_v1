@@ -58,13 +58,21 @@
 
         <!-- Display user_inventory.user_id start -->
         <td>
-          <%= user_inventory.user.email %>
+          <% if user_inventory.user.present? %>
+            <a href="/users/<%= user_inventory.user.id %>">
+              <%= user_inventory.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_inventory.user_id end -->
 
         <!-- Display user_inventory.equipment_id start -->
         <td>
-          <%= user_inventory.equipment.name %>
+          <% if user_inventory.equipment.present? %>
+            <a href="/equipment/<%= user_inventory.equipment.id %>">
+              <%= user_inventory.equipment.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_inventory.equipment_id end -->
 

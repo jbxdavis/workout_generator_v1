@@ -58,13 +58,21 @@
 
         <!-- Display equipment_requirement.lift_id start -->
         <td>
-          <%= equipment_requirement.lift.cooldown_hours %>
+          <% if equipment_requirement.lift.present? %>
+            <a href="/lifts/<%= equipment_requirement.lift.id %>">
+              <%= equipment_requirement.lift.cooldown_hours %>
+            </a>
+          <% end %>
         </td>
         <!-- Display equipment_requirement.lift_id end -->
 
         <!-- Display equipment_requirement.equipment_id start -->
         <td>
-          <%= equipment_requirement.equipment.name %>
+          <% if equipment_requirement.equipment.present? %>
+            <a href="/equipment/<%= equipment_requirement.equipment.id %>">
+              <%= equipment_requirement.equipment.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display equipment_requirement.equipment_id end -->
 

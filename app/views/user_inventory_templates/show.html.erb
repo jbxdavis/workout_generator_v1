@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @user_inventory.user_id %>
+        <% if @user_inventory.user.present? %>
+          <a href="/users/<%= @user_inventory.user_id %>">
+            <%= @user_inventory.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display equipment_id start -->
       <dd>
-        <%= @user_inventory.equipment_id %>
+        <% if @user_inventory.equipment.present? %>
+          <a href="/equipment/<%= @user_inventory.equipment_id %>">
+            <%= @user_inventory.equipment.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display equipment_id end -->
 

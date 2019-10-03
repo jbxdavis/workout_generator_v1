@@ -34,7 +34,11 @@
       </dt>
       <!-- Display lift_id start -->
       <dd>
-        <%= @equipment_requirement.lift_id %>
+        <% if @equipment_requirement.lift.present? %>
+          <a href="/lifts/<%= @equipment_requirement.lift_id %>">
+            <%= @equipment_requirement.lift.cooldown_hours %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display lift_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display equipment_id start -->
       <dd>
-        <%= @equipment_requirement.equipment_id %>
+        <% if @equipment_requirement.equipment.present? %>
+          <a href="/equipment/<%= @equipment_requirement.equipment_id %>">
+            <%= @equipment_requirement.equipment.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display equipment_id end -->
 
