@@ -1,6 +1,7 @@
 class MgTargetsController < ApplicationController
   def index
-    @mg_targets = MgTarget.page(params[:page]).per(10)
+    @q = MgTarget.ransack(params[:q])
+    @mg_targets = @q.result(:distinct => true).includes(:lift, :mg).page(params[:page]).per(10)
 
     render("mg_target_templates/index.html.erb")
   end

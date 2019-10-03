@@ -1,6 +1,7 @@
 class EquipmentRequirementsController < ApplicationController
   def index
-    @equipment_requirements = EquipmentRequirement.page(params[:page]).per(10)
+    @q = EquipmentRequirement.ransack(params[:q])
+    @equipment_requirements = @q.result(:distinct => true).includes(:lift, :equipment).page(params[:page]).per(10)
 
     render("equipment_requirement_templates/index.html.erb")
   end

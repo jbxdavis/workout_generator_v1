@@ -1,6 +1,7 @@
 class UserInventoriesController < ApplicationController
   def index
-    @user_inventories = UserInventory.page(params[:page]).per(10)
+    @q = UserInventory.ransack(params[:q])
+    @user_inventories = @q.result(:distinct => true).includes(:user, :equipment).page(params[:page]).per(10)
 
     render("user_inventory_templates/index.html.erb")
   end

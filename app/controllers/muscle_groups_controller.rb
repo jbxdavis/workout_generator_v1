@@ -1,6 +1,7 @@
 class MuscleGroupsController < ApplicationController
   def index
-    @muscle_groups = MuscleGroup.page(params[:page]).per(10)
+    @q = MuscleGroup.ransack(params[:q])
+    @muscle_groups = @q.result(:distinct => true).includes(:mg_targets, :lifts_targeting).page(params[:page]).per(10)
 
     render("muscle_group_templates/index.html.erb")
   end

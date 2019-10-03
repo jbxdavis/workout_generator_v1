@@ -1,6 +1,7 @@
 class LiftsController < ApplicationController
   def index
-    @lifts = Lift.page(params[:page]).per(10)
+    @q = Lift.ransack(params[:q])
+    @lifts = @q.result(:distinct => true).includes(:favorites, :mg_targets, :equipment_requirements, :required_equipment, :mgs_targeted, :users_favorited).page(params[:page]).per(10)
 
     render("lift_templates/index.html.erb")
   end
