@@ -12,6 +12,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:favorited_lifts) }
+
     it { should have_many(:equipment) }
 
     end

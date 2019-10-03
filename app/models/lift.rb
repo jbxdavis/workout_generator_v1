@@ -12,6 +12,10 @@ class Lift < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users_favorited,
+             :through => :favorites,
+             :source => :user
+
   has_many   :mgs_targeted,
              :through => :mg_targets,
              :source => :mg

@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :favorited_lifts,
+             :through => :favorites,
+             :source => :lift
+
   has_many   :equipment,
              :through => :user_inventories
 
