@@ -10,6 +10,8 @@ RSpec.describe MuscleGroup, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:lifts_targeting) }
+
     end
 
     describe "Validations" do

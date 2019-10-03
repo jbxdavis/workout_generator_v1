@@ -7,6 +7,10 @@ class MuscleGroup < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :lifts_targeting,
+             :through => :mg_targets,
+             :source => :lift
+
   # Validations
 
 end
