@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for mg_id start -->
-    <input type="text" id="mg_id" name="mg_id" class="form-control" value="<%= @mg_target.mg_id %>">
+    <%= select_tag(:mg_id, options_from_collection_for_select(MuscleGroup.all, :id, :name, @mg_target.mg_id), :class => "form-control") %>
     <!-- Input for mg_id end -->
   </div>
   <!-- Label and input for mg_id end -->
