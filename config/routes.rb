@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Mg target resource:
+
+  # CREATE
+  get("/mg_targets/new", { :controller => "mg_targets", :action => "new_form" })
+  post("/create_mg_target", { :controller => "mg_targets", :action => "create_row" })
+
+  # READ
+  get("/mg_targets", { :controller => "mg_targets", :action => "index" })
+  get("/mg_targets/:id_to_display", { :controller => "mg_targets", :action => "show" })
+
+  # UPDATE
+  get("/mg_targets/:prefill_with_id/edit", { :controller => "mg_targets", :action => "edit_form" })
+  post("/update_mg_target/:id_to_modify", { :controller => "mg_targets", :action => "update_row" })
+
+  # DELETE
+  get("/delete_mg_target/:id_to_remove", { :controller => "mg_targets", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Favorite resource:
 
   # CREATE

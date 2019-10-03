@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Mg target #<%= @mg_target.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/mg_targets" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link mg_target start -->
+      <div class="col">
+        <a href="/mg_targets/<%= @mg_target.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit mg target
+        </a>
+      </div>
+      <!-- Edit link mg_target end -->
+
+      <!-- Delete link mg_target start -->
+      <div class="col">
+        <a href="/delete_mg_target/<%= @mg_target.id %>" class="btn btn-block btn-outline-secondary">
+          Delete mg target
+        </a>
+      </div>
+      <!-- Delete link mg_target end -->
+    </div>
+
+    <dl>
+      <dt>
+        Mg
+      </dt>
+      <!-- Display mg_id start -->
+      <dd>
+        <%= @mg_target.mg_id %>
+      </dd>
+      <!-- Display mg_id end -->
+
+      <dt>
+        Lift
+      </dt>
+      <!-- Display lift_id start -->
+      <dd>
+        <%= @mg_target.lift_id %>
+      </dd>
+      <!-- Display lift_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@mg_target.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@mg_target.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
