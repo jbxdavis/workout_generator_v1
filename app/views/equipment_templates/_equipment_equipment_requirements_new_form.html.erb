@@ -1,0 +1,25 @@
+<!-- Form equipment_requirement start -->
+<form action="/create_equipment_requirement_from_equipment" method="post">
+<!-- Form equipment_requirement end -->
+
+  <!-- Label and input for lift_id start -->
+  <div class="form-group">
+    <label for="lift_id">
+      Lift
+    </label>
+
+    <!-- Input for lift_id start -->
+    <input type="text" id="lift_id" name="lift_id" class="form-control" value="<%= @equipment_requirement.lift_id %>">
+    <!-- Input for lift_id end -->
+  </div>
+  <!-- Label and input for lift_id end -->
+
+  <!-- Label and input for equipment_id start -->
+  <!-- Input for equipment_id start -->
+  <input type="hidden" name="equipment_id" value="<%= @equipment.id %>">
+  <!-- Input for equipment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create equipment requirement
+  </button>
+</form>

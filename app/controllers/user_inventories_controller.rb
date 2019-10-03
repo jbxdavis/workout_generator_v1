@@ -32,6 +32,21 @@ class UserInventoriesController < ApplicationController
     end
   end
 
+  def create_row_from_equipment
+    @user_inventory = UserInventory.new
+
+    @user_inventory.user_id = params.fetch("user_id")
+    @user_inventory.equipment_id = params.fetch("equipment_id")
+
+    if @user_inventory.valid?
+      @user_inventory.save
+
+      redirect_to("/equipment/#{@user_inventory.equipment_id}", notice: "UserInventory created successfully.")
+    else
+      render("user_inventory_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @user_inventory = UserInventory.find(params.fetch("prefill_with_id"))
 

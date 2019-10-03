@@ -32,6 +32,36 @@ class EquipmentRequirementsController < ApplicationController
     end
   end
 
+  def create_row_from_lift
+    @equipment_requirement = EquipmentRequirement.new
+
+    @equipment_requirement.lift_id = params.fetch("lift_id")
+    @equipment_requirement.equipment_id = params.fetch("equipment_id")
+
+    if @equipment_requirement.valid?
+      @equipment_requirement.save
+
+      redirect_to("/lifts/#{@equipment_requirement.lift_id}", notice: "EquipmentRequirement created successfully.")
+    else
+      render("equipment_requirement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_equipment
+    @equipment_requirement = EquipmentRequirement.new
+
+    @equipment_requirement.lift_id = params.fetch("lift_id")
+    @equipment_requirement.equipment_id = params.fetch("equipment_id")
+
+    if @equipment_requirement.valid?
+      @equipment_requirement.save
+
+      redirect_to("/equipment/#{@equipment_requirement.equipment_id}", notice: "EquipmentRequirement created successfully.")
+    else
+      render("equipment_requirement_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @equipment_requirement = EquipmentRequirement.find(params.fetch("prefill_with_id"))
 

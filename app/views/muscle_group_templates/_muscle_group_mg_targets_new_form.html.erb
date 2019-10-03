@@ -1,0 +1,25 @@
+<!-- Form mg_target start -->
+<form action="/create_mg_target_from_muscle_group" method="post">
+<!-- Form mg_target end -->
+
+  <!-- Label and input for mg_id start -->
+  <!-- Input for mg_id start -->
+  <input type="hidden" name="mg_id" value="<%= @muscle_group.id %>">
+  <!-- Input for mg_id end -->
+
+  <!-- Label and input for lift_id start -->
+  <div class="form-group">
+    <label for="lift_id">
+      Lift
+    </label>
+
+    <!-- Input for lift_id start -->
+    <input type="text" id="lift_id" name="lift_id" class="form-control" value="<%= @mg_target.lift_id %>">
+    <!-- Input for lift_id end -->
+  </div>
+  <!-- Label and input for lift_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create mg target
+  </button>
+</form>

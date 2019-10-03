@@ -6,6 +6,7 @@ class MuscleGroupsController < ApplicationController
   end
 
   def show
+    @mg_target = MgTarget.new
     @muscle_group = MuscleGroup.find(params.fetch("id_to_display"))
 
     render("muscle_group_templates/show.html.erb")

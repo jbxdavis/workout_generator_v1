@@ -6,6 +6,9 @@ class LiftsController < ApplicationController
   end
 
   def show
+    @equipment_requirement = EquipmentRequirement.new
+    @mg_target = MgTarget.new
+    @favorite = Favorite.new
     @lift = Lift.find(params.fetch("id_to_display"))
 
     render("lift_templates/show.html.erb")

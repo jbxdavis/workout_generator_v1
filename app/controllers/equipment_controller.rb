@@ -6,6 +6,8 @@ class EquipmentController < ApplicationController
   end
 
   def show
+    @equipment_requirement = EquipmentRequirement.new
+    @user_inventory = UserInventory.new
     @equipment = Equipment.find(params.fetch("id_to_display"))
 
     render("equipment_templates/show.html.erb")

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/equipment_requirements/new", { :controller => "equipment_requirements", :action => "new_form" })
   post("/create_equipment_requirement", { :controller => "equipment_requirements", :action => "create_row" })
+  post("/create_equipment_requirement_from_equipment", { :controller => "equipment_requirements", :action => "create_row_from_equipment" })
+  post("/create_equipment_requirement_from_lift", { :controller => "equipment_requirements", :action => "create_row_from_lift" })
 
   # READ
   get("/equipment_requirements", { :controller => "equipment_requirements", :action => "index" })
@@ -66,6 +68,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/user_inventories/new", { :controller => "user_inventories", :action => "new_form" })
   post("/create_user_inventory", { :controller => "user_inventories", :action => "create_row" })
+  post("/create_user_inventory_from_equipment", { :controller => "user_inventories", :action => "create_row_from_equipment" })
 
   # READ
   get("/user_inventories", { :controller => "user_inventories", :action => "index" })
@@ -106,6 +109,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/mg_targets/new", { :controller => "mg_targets", :action => "new_form" })
   post("/create_mg_target", { :controller => "mg_targets", :action => "create_row" })
+  post("/create_mg_target_from_muscle_group", { :controller => "mg_targets", :action => "create_row_from_muscle_group" })
+  post("/create_mg_target_from_lift", { :controller => "mg_targets", :action => "create_row_from_lift" })
 
   # READ
   get("/mg_targets", { :controller => "mg_targets", :action => "index" })
@@ -127,6 +132,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/favorites/new", { :controller => "favorites", :action => "new_form" })
   post("/create_favorite", { :controller => "favorites", :action => "create_row" })
+  post("/create_favorite_from_lift", { :controller => "favorites", :action => "create_row_from_lift" })
 
   # READ
   get("/favorites", { :controller => "favorites", :action => "index" })

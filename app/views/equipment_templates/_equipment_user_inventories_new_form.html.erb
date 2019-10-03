@@ -1,0 +1,25 @@
+<!-- Form user_inventory start -->
+<form action="/create_user_inventory_from_equipment" method="post">
+<!-- Form user_inventory end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @user_inventory.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for equipment_id start -->
+  <!-- Input for equipment_id start -->
+  <input type="hidden" name="equipment_id" value="<%= @equipment.id %>">
+  <!-- Input for equipment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create user inventory
+  </button>
+</form>

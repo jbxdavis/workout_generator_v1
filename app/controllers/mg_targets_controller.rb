@@ -32,6 +32,36 @@ class MgTargetsController < ApplicationController
     end
   end
 
+  def create_row_from_lift
+    @mg_target = MgTarget.new
+
+    @mg_target.mg_id = params.fetch("mg_id")
+    @mg_target.lift_id = params.fetch("lift_id")
+
+    if @mg_target.valid?
+      @mg_target.save
+
+      redirect_to("/lifts/#{@mg_target.lift_id}", notice: "MgTarget created successfully.")
+    else
+      render("mg_target_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_muscle_group
+    @mg_target = MgTarget.new
+
+    @mg_target.mg_id = params.fetch("mg_id")
+    @mg_target.lift_id = params.fetch("lift_id")
+
+    if @mg_target.valid?
+      @mg_target.save
+
+      redirect_to("/muscle_groups/#{@mg_target.mg_id}", notice: "MgTarget created successfully.")
+    else
+      render("mg_target_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @mg_target = MgTarget.find(params.fetch("prefill_with_id"))
 
