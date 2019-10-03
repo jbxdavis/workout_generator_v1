@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      User inventory #<%= @user_inventory.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/user_inventories" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link user_inventory start -->
+      <div class="col">
+        <a href="/user_inventories/<%= @user_inventory.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit user inventory
+        </a>
+      </div>
+      <!-- Edit link user_inventory end -->
+
+      <!-- Delete link user_inventory start -->
+      <div class="col">
+        <a href="/delete_user_inventory/<%= @user_inventory.id %>" class="btn btn-block btn-outline-secondary">
+          Delete user inventory
+        </a>
+      </div>
+      <!-- Delete link user_inventory end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @user_inventory.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Equipment
+      </dt>
+      <!-- Display equipment_id start -->
+      <dd>
+        <%= @user_inventory.equipment_id %>
+      </dd>
+      <!-- Display equipment_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_inventory.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_inventory.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

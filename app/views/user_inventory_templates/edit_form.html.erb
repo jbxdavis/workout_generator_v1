@@ -1,0 +1,44 @@
+<h1>
+  Edit user inventory #<%= @user_inventory.id %>
+</h1>
+
+<hr>
+
+<!-- Form user_inventory start -->
+<form action="/update_user_inventory/<%= @user_inventory.id %>" method="post">
+<!-- Form user_inventory end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @user_inventory.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for equipment_id start -->
+  <div class="form-group">
+    <label for="equipment_id">
+      Equipment
+    </label>
+
+    <!-- Input for equipment_id start -->
+    <input type="text" id="equipment_id" name="equipment_id" class="form-control" value="<%= @user_inventory.equipment_id %>">
+    <!-- Input for equipment_id end -->
+  </div>
+  <!-- Label and input for equipment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update user inventory
+  </button>
+</form>
+
+<hr>
+
+<a href="/user_inventories">
+  Go back
+</a>

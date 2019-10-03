@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User inventory resource:
+
+  # CREATE
+  get("/user_inventories/new", { :controller => "user_inventories", :action => "new_form" })
+  post("/create_user_inventory", { :controller => "user_inventories", :action => "create_row" })
+
+  # READ
+  get("/user_inventories", { :controller => "user_inventories", :action => "index" })
+  get("/user_inventories/:id_to_display", { :controller => "user_inventories", :action => "show" })
+
+  # UPDATE
+  get("/user_inventories/:prefill_with_id/edit", { :controller => "user_inventories", :action => "edit_form" })
+  post("/update_user_inventory/:id_to_modify", { :controller => "user_inventories", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_inventory/:id_to_remove", { :controller => "user_inventories", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Muscle group resource:
 
   # CREATE
