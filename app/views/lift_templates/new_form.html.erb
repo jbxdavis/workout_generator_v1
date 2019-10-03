@@ -1,0 +1,45 @@
+<h1>
+  Add a new lift
+</h1>
+
+
+<hr>
+
+<!-- Form lift start -->
+<form action="/create_lift" method="post">
+<!-- Form lift end -->
+
+  <!-- Label and input for cooldown_hours start -->
+  <div class="form-group">
+    <label for="cooldown_hours">
+      Cooldown hours
+    </label>
+
+    <!-- Input for cooldown_hours start -->
+    <input type="text" id="cooldown_hours" name="cooldown_hours" class="form-control">
+    <!-- Input for cooldown_hours end -->
+  </div>
+  <!-- Label and input for cooldown_hours end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create lift
+  </button>
+</form>
+
+<hr>
+
+<a href="/lifts">
+  Go back
+</a>
