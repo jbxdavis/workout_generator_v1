@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "lifts#index"
   # Routes for the Template resource:
 
   # CREATE
