@@ -1,6 +1,9 @@
 class Lift < ApplicationRecord
   # Direct associations
 
+  has_many   :equipment_requirements,
+             :dependent => :destroy
+
   has_many   :mg_targets,
              :dependent => :destroy
 

@@ -4,6 +4,8 @@ RSpec.describe Lift, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:equipment_requirements) }
+
     it { should have_many(:mg_targets) }
 
     it { should have_many(:favorites) }
