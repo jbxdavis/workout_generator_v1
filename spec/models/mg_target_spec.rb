@@ -4,6 +4,8 @@ RSpec.describe MgTarget, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:mg) }
+
     it { should belong_to(:lift) }
 
     end

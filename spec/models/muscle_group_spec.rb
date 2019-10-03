@@ -4,6 +4,8 @@ RSpec.describe MuscleGroup, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:mg_targets) }
+
     end
 
     describe "InDirect Associations" do
