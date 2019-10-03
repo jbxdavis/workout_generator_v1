@@ -9,6 +9,10 @@ class Equipment < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :user_inventories,
+             :source => :user
+
   has_many   :lift_requiring,
              :through => :equipment_requirements,
              :source => :lift

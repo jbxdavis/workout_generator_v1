@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :equipment,
+             :through => :user_inventories
+
   # Validations
 
   # Include default devise modules. Others available are:
