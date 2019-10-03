@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @equipment.errors.any? %>
+  <% @equipment.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit equipment #<%= @equipment.id %>
+</h1>
+
+<hr>
+
+<!-- Form equipment start -->
+<form action="/update_equipment/<%= @equipment.id %>" method="post">
+<!-- Form equipment end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @equipment.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update equipment
+  </button>
+</form>
+
+<hr>
+
+<a href="/equipment">
+  Go back
+</a>

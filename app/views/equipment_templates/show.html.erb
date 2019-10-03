@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Equipment #<%= @equipment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/equipment" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link equipment start -->
+      <div class="col">
+        <a href="/equipment/<%= @equipment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit equipment
+        </a>
+      </div>
+      <!-- Edit link equipment end -->
+
+      <!-- Delete link equipment start -->
+      <div class="col">
+        <a href="/delete_equipment/<%= @equipment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete equipment
+        </a>
+      </div>
+      <!-- Delete link equipment end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @equipment.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@equipment.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@equipment.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

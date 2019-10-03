@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Equipment resource:
+
+  # CREATE
+  get("/equipment/new", { :controller => "equipment", :action => "new_form" })
+  post("/create_equipment", { :controller => "equipment", :action => "create_row" })
+
+  # READ
+  get("/equipment", { :controller => "equipment", :action => "index" })
+  get("/equipment/:id_to_display", { :controller => "equipment", :action => "show" })
+
+  # UPDATE
+  get("/equipment/:prefill_with_id/edit", { :controller => "equipment", :action => "edit_form" })
+  post("/update_equipment/:id_to_modify", { :controller => "equipment", :action => "update_row" })
+
+  # DELETE
+  get("/delete_equipment/:id_to_remove", { :controller => "equipment", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the User inventory resource:
 
   # CREATE
