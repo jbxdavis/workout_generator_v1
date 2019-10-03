@@ -1,6 +1,6 @@
 class UserInventoriesController < ApplicationController
   def index
-    @user_inventories = UserInventory.all
+    @user_inventories = UserInventory.page(params[:page]).per(10)
 
     render("user_inventory_templates/index.html.erb")
   end

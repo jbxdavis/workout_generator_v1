@@ -1,6 +1,6 @@
 class MuscleGroupsController < ApplicationController
   def index
-    @muscle_groups = MuscleGroup.all
+    @muscle_groups = MuscleGroup.page(params[:page]).per(10)
 
     render("muscle_group_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class MgTargetsController < ApplicationController
   def index
-    @mg_targets = MgTarget.all
+    @mg_targets = MgTarget.page(params[:page]).per(10)
 
     render("mg_target_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class EquipmentRequirementsController < ApplicationController
   def index
-    @equipment_requirements = EquipmentRequirement.all
+    @equipment_requirements = EquipmentRequirement.page(params[:page]).per(10)
 
     render("equipment_requirement_templates/index.html.erb")
   end
