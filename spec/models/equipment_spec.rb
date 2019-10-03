@@ -4,6 +4,8 @@ RSpec.describe Equipment, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:equipment_requirements) }
+
     it { should have_many(:user_inventories) }
 
     end
