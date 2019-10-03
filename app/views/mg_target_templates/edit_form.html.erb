@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for lift_id start -->
-    <input type="text" id="lift_id" name="lift_id" class="form-control" value="<%= @mg_target.lift_id %>">
+    <%= select_tag(:lift_id, options_from_collection_for_select(Lift.all, :id, :cooldown_hours, @mg_target.lift_id), :class => "form-control") %>
     <!-- Input for lift_id end -->
   </div>
   <!-- Label and input for lift_id end -->
