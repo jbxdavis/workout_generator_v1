@@ -12,6 +12,8 @@ RSpec.describe Equipment, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:lift_requiring) }
+
     end
 
     describe "Validations" do

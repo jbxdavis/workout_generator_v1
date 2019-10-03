@@ -9,6 +9,10 @@ class Equipment < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :lift_requiring,
+             :through => :equipment_requirements,
+             :source => :lift
+
   # Validations
 
 end
