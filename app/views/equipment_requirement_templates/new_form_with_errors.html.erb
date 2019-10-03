@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @equipment_requirement.present? %>
+  <% if @equipment_requirement.errors.any? %>
+    <% @equipment_requirement.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new equipment requirement
+</h1>
+
+
+<hr>
+
+<!-- Form equipment_requirement start -->
+<form action="/create_equipment_requirement" method="post">
+<!-- Form equipment_requirement end -->
+
+  <!-- Label and input for lift_id start -->
+  <div class="form-group">
+    <label for="lift_id">
+      Lift
+    </label>
+
+    <!-- Input for lift_id start -->
+    <input type="text" id="lift_id" name="lift_id" class="form-control" value="<%= @equipment_requirement.lift_id %>">
+    <!-- Input for lift_id end -->
+  </div>
+  <!-- Label and input for lift_id end -->
+
+  <!-- Label and input for equipment_id start -->
+  <div class="form-group">
+    <label for="equipment_id">
+      Equipment
+    </label>
+
+    <!-- Input for equipment_id start -->
+    <input type="text" id="equipment_id" name="equipment_id" class="form-control" value="<%= @equipment_requirement.equipment_id %>">
+    <!-- Input for equipment_id end -->
+  </div>
+  <!-- Label and input for equipment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create equipment requirement
+  </button>
+</form>
+
+<hr>
+
+<a href="/equipment_requirements">
+  Go back
+</a>

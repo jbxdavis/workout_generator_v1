@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Equipment requirement resource:
+
+  # CREATE
+  get("/equipment_requirements/new", { :controller => "equipment_requirements", :action => "new_form" })
+  post("/create_equipment_requirement", { :controller => "equipment_requirements", :action => "create_row" })
+
+  # READ
+  get("/equipment_requirements", { :controller => "equipment_requirements", :action => "index" })
+  get("/equipment_requirements/:id_to_display", { :controller => "equipment_requirements", :action => "show" })
+
+  # UPDATE
+  get("/equipment_requirements/:prefill_with_id/edit", { :controller => "equipment_requirements", :action => "edit_form" })
+  post("/update_equipment_requirement/:id_to_modify", { :controller => "equipment_requirements", :action => "update_row" })
+
+  # DELETE
+  get("/delete_equipment_requirement/:id_to_remove", { :controller => "equipment_requirements", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Equipment resource:
 
   # CREATE
