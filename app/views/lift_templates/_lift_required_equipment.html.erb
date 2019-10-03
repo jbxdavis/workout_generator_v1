@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @lift.required_equipment.each do |equipment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/equipment/<%= equipment.id %>">
           <%= equipment.name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

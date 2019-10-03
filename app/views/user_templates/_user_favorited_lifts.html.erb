@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @user.favorited_lifts.each do |lift| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/lifts/<%= lift.id %>">
           <%= lift.cooldown_hours %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

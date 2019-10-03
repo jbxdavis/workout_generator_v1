@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @muscle_group.errors.any? %>
   <% @muscle_group.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,21 +12,15 @@
 
 <hr>
 
-<!-- Form muscle_group start -->
 <form action="/update_muscle_group/<%= @muscle_group.id %>" method="post">
-<!-- Form muscle_group end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @muscle_group.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update muscle group

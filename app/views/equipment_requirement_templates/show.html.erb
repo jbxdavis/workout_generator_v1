@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link equipment_requirement start -->
       <div class="col">
         <a href="/equipment_requirements/<%= @equipment_requirement.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit equipment requirement
         </a>
       </div>
-      <!-- Edit link equipment_requirement end -->
 
-      <!-- Delete link equipment_requirement start -->
       <div class="col">
         <a href="/delete_equipment_requirement/<%= @equipment_requirement.id %>" class="btn btn-block btn-outline-secondary">
           Delete equipment requirement
         </a>
       </div>
-      <!-- Delete link equipment_requirement end -->
     </div>
 
     <dl>
       <dt>
         Lift
       </dt>
-      <!-- Display lift_id start -->
       <dd>
         <% if @equipment_requirement.lift.present? %>
           <a href="/lifts/<%= @equipment_requirement.lift_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display lift_id end -->
 
       <dt>
         Equipment
       </dt>
-      <!-- Display equipment_id start -->
       <dd>
         <% if @equipment_requirement.equipment.present? %>
           <a href="/equipment/<%= @equipment_requirement.equipment_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display equipment_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@equipment_requirement.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@equipment_requirement.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

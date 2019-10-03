@@ -1,23 +1,14 @@
-<!-- Form mg_target start -->
 <form action="/create_mg_target_from_lift" method="post">
-<!-- Form mg_target end -->
 
-  <!-- Label and input for mg_id start -->
   <div class="form-group">
     <label for="mg_id">
       Mg
     </label>
 
-    <!-- Input for mg_id start -->
     <%= select_tag(:mg_id, options_from_collection_for_select(MuscleGroup.all, :id, :name, @mg_target.mg_id), :class => "form-control") %>
-    <!-- Input for mg_id end -->
   </div>
-  <!-- Label and input for mg_id end -->
 
-  <!-- Label and input for lift_id start -->
-  <!-- Input for lift_id start -->
   <input type="hidden" name="lift_id" value="<%= @lift.id %>">
-  <!-- Input for lift_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create mg target

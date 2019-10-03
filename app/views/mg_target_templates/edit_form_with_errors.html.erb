@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @mg_target.errors.any? %>
   <% @mg_target.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form mg_target start -->
 <form action="/update_mg_target/<%= @mg_target.id %>" method="post">
-<!-- Form mg_target end -->
 
-  <!-- Label and input for mg_id start -->
   <div class="form-group">
     <label for="mg_id">
       Mg
     </label>
 
-    <!-- Input for mg_id start -->
     <%= select_tag(:mg_id, options_from_collection_for_select(MuscleGroup.all, :id, :name, @mg_target.mg_id), :class => "form-control") %>
-    <!-- Input for mg_id end -->
   </div>
-  <!-- Label and input for mg_id end -->
 
-  <!-- Label and input for lift_id start -->
   <div class="form-group">
     <label for="lift_id">
       Lift
     </label>
 
-    <!-- Input for lift_id start -->
     <%= select_tag(:lift_id, options_from_collection_for_select(Lift.all, :id, :cooldown_hours, @mg_target.lift_id), :class => "form-control") %>
-    <!-- Input for lift_id end -->
   </div>
-  <!-- Label and input for lift_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update mg target

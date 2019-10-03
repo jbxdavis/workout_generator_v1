@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form favorite start -->
 <form action="/update_favorite/<%= @favorite.id %>" method="post">
-<!-- Form favorite end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for lift_id start -->
   <div class="form-group">
     <label for="lift_id">
       Lift
     </label>
 
-    <!-- Input for lift_id start -->
     <%= select_tag(:lift_id, options_from_collection_for_select(Lift.all, :id, :cooldown_hours, @favorite.lift_id), :class => "form-control") %>
-    <!-- Input for lift_id end -->
   </div>
-  <!-- Label and input for lift_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update favorite

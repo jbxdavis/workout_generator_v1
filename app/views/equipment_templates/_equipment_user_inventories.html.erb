@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @equipment.user_inventories.each do |user_inventory| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/user_inventories/<%= user_inventory.id %>">
           <%= user_inventory.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_user_inventory_from_equipment/<%= user_inventory.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="equipment_user_inventories_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "equipment_templates/equipment_user_inventories_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

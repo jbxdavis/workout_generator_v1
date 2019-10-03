@@ -11,71 +11,55 @@
         </a>
       </div>
 
-      <!-- Edit link template start -->
       <div class="col">
         <a href="/templates/<%= @template.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit template
         </a>
       </div>
-      <!-- Edit link template end -->
 
-      <!-- Delete link template start -->
       <div class="col">
         <a href="/delete_template/<%= @template.id %>" class="btn btn-block btn-outline-secondary">
           Delete template
         </a>
       </div>
-      <!-- Delete link template end -->
     </div>
 
     <dl>
       <dt>
         Sets
       </dt>
-      <!-- Display sets start -->
       <dd>
         <%= @template.sets %>
       </dd>
-      <!-- Display sets end -->
 
       <dt>
         Reps
       </dt>
-      <!-- Display reps start -->
       <dd>
         <%= @template.reps %>
       </dd>
-      <!-- Display reps end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @template.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@template.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@template.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
