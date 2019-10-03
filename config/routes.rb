@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Muscle group resource:
+
+  # CREATE
+  get("/muscle_groups/new", { :controller => "muscle_groups", :action => "new_form" })
+  post("/create_muscle_group", { :controller => "muscle_groups", :action => "create_row" })
+
+  # READ
+  get("/muscle_groups", { :controller => "muscle_groups", :action => "index" })
+  get("/muscle_groups/:id_to_display", { :controller => "muscle_groups", :action => "show" })
+
+  # UPDATE
+  get("/muscle_groups/:prefill_with_id/edit", { :controller => "muscle_groups", :action => "edit_form" })
+  post("/update_muscle_group/:id_to_modify", { :controller => "muscle_groups", :action => "update_row" })
+
+  # DELETE
+  get("/delete_muscle_group/:id_to_remove", { :controller => "muscle_groups", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Mg target resource:
 
   # CREATE
